@@ -27,7 +27,7 @@ func main() {
 	//기본 Url 핸들러 메소드 지정
 	http.HandleFunc("/", defaultHandler)
 	//서버 시작
-	err := http.ListenAndServe("192.168.15.248:9090", nil)
+	err := http.ListenAndServe(":9090", nil)
 	//예외 처리
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
