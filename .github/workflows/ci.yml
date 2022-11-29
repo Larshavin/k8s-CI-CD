@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: gkdlgkdl2040/testWeb:${{ github.head_ref }}
+          tags: gkdlgkdl2040/testweb:${{ github.head_ref }}
