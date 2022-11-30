@@ -21,7 +21,7 @@ func defaultHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	//기본 출력
 	fmt.Fprintf(w, "Golang WebServer Working!")
-	fmt.Println("재근이1")
+	fmt.Println("재근이12")
 }
 
 func main() {
