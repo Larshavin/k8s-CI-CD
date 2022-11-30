@@ -1,13 +1,13 @@
 name: Create and publish a package
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - develop
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Set up QEMU
