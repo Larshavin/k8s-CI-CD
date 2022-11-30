@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  docker:
+  build:
     runs-on: [self-hosted, linux, x64]
     steps:
       -
