@@ -24,6 +24,8 @@ jobs:
         
     - name: Build
       run: go build -v ./...
+    - name: gcc
+      run: apt-get install build-essential
 
     - name: Test
       run: go test -v ./...
