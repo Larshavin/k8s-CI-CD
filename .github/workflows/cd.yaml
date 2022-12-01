@@ -62,7 +62,7 @@ jobs:
         run: |
           cd ./webserver
           ls -al
-          cd ./argocd-repository/webserver/webserver
+          cd ./webserver
           ls -al
           
       - name: Update Kubernetes resources by yq
