@@ -62,8 +62,13 @@ jobs:
         run: |
           ls -al
           cd ..
+          pwd
           ls -al
-          
+          cd ..
+          pwd
+          ls -al
+          cd ..
+          pwd
           
       - name: Update Kubernetes resources by yq
         uses: mikefarah/yq@master
