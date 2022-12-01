@@ -5,7 +5,7 @@ on:
     branches:
       - main
 env:
-  IMAGE_NAME: larshavin/testweb
+  IMAGE_NAME: gkdlgkdl2040/testweb
 jobs:
   docker:
     runs-on: [self-hosted, linux, x64]
