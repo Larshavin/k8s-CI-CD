@@ -11,6 +11,8 @@ jobs:
 
   build:
     runs-on: [self-hosted, linux, x64]
+    compiler: gcc
+    gcc: 8
     steps:
     - uses: actions/checkout@v3
 
@@ -18,12 +20,6 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
-    - name: Install GCC11
-      shell: bash
-      run:  |
-          sudo apt update
-          sudo apt install gcc-11 g++-11
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 110 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11
 
     - name: Install dependencies
       run: go get .
