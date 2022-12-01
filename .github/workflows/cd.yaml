@@ -71,7 +71,7 @@ jobs:
         run: |
           cd argocd-repository
           git init
-          git remote add origin https://github.com/Larshavin/argocd-repository.git
+          git remote add origin "github.com/Larshavin/argocd-repository.git"
           git add *
           git config --global user.email "gkdlgkdl@naver.com"
           git config --global user.name "Larshavin"
