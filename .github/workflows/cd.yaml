@@ -32,12 +32,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}
+#       -
+#         name: Build and push
+#         uses: docker/build-push-action@v3
+#         with:
+#           push: true
+#           tags: ${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}
  
   deploy:
     runs-on: [self-hosted, linux, x64]
@@ -60,15 +60,7 @@ jobs:
           
       - name: change directory to argocd-repository/webserver
         run: |
-          ls -al
-          cd ..
-          pwd
-          ls -al
-          cd ..
-          pwd
-          ls -al
-          cd ..
-          pwd
+          cd ./webserver
           
       - name: Update Kubernetes resources by yq
         uses: mikefarah/yq@master
