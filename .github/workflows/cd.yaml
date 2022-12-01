@@ -66,13 +66,13 @@ jobs:
           cmd: pwd && yq --inplace '.spec.template.spec.containers[0].image="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' ./argocd-repository/webserver/webserver-deployment.yaml
           
       - name: change directory to argocd-repository/webserver
+        working-directory: ./argocd-repository
         run: |
-          cat argocd-repository/webserver/webserver-deployment.yaml
+          cat webserver/webserver-deployment.yaml
           
       - name: Commit files
+        working-directory: ./argocd-repository
         run: |
-          git status       
-          cd argocd-repository
           git status
           git config --global user.email "gkdlgkdl@naver.com"
           git config --global user.name "Larshavin"
