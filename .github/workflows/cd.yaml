@@ -12,7 +12,7 @@ jobs:
     steps:
       - 
         name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         name: Get verion
         id: image
@@ -50,11 +50,9 @@ jobs:
           VERSION=$(echo ${{ github.sha }} | cut -c1-8)
           echo VERSION=$VERSION
           echo "::set-output name=version::$VERSION"
-          cd ../../
-          pwd
 
       - name: Checkout Argocd Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: Larshavin/argocd-repository
           token: ${{ secrets.TOKEN_FORWIZ }} 
@@ -72,6 +70,7 @@ jobs:
       - name: Commit files
         run: |
           pwd
+          ls ${{github.workspace}}
           cd argocd-repository
           git config --global user.email "gkdlgkdl@naver.com"
           git config --global user.name "Larshavin"
