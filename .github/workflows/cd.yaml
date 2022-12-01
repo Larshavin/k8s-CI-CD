@@ -50,9 +50,8 @@ jobs:
           VERSION=$(echo ${{ github.sha }} | cut -c1-8)
           echo VERSION=$VERSION
           echo "::set-output name=version::$VERSION"
-          ls -al
-          ls -al ../
-          ls -al ../../
+          cd ../../
+          pwd
 
       - name: Checkout Argocd Repository
         uses: actions/checkout@v2
@@ -72,10 +71,8 @@ jobs:
           
       - name: Commit files
         run: |
+          pwd
           cd argocd-repository
-          git init
-          git remote add origin "github.com/Larshavin/argocd-repository.git"
-          git add *
           git config --global user.email "gkdlgkdl@naver.com"
           git config --global user.name "Larshavin"
           git commit -am "Update image tag as ${{ steps.image.outputs.version }}"
