@@ -26,4 +26,4 @@ jobs:
       run: go build -o main ./main.go
 
     - name: Test
-      run: go test main
+      run: go test ./main
