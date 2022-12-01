@@ -17,15 +17,13 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version:  ${{ matrix.go-version }}
+        go-version: 1.18
 
     - name: Install dependencies
       run: go get .
         
     - name: Build
       run: go build -v ./...
-    - name: gcc
-      run: sudo apt-get install build-essential
 
     - name: Test
       run: go test -v ./...
