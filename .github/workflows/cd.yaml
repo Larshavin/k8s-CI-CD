@@ -72,6 +72,7 @@ jobs:
           cd argocd-repository
           git init
           git remote add origin https://github.com/Larshavin/argocd-repository.git
+          git add *
           git config --global user.email "gkdlgkdl@naver.com"
           git config --global user.name "Larshavin"
           git commit -am "Update image tag as ${{ steps.image.outputs.version }}"
