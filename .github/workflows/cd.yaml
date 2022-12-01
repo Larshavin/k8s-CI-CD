@@ -60,10 +60,8 @@ jobs:
 
       - name: Update Kubernetes resources by yq
         uses: mikefarah/yq@master
-        run: |
-          cd argocd-repository/webserver
-          yq --inplace '.spec.template.spec.containers[image]="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' webserver-deployment.yaml
-          cat webserver-deployment.yaml
+        with:
+          cmd: cd argocd-repository/webserver && yq --inplace '.spec.template.spec.containers[image]="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' webserver-deployment.yaml && cat webserver-deployment.yaml
           
       - name: Commit files
         run: |
