@@ -61,7 +61,7 @@ jobs:
       - name: Update Kubernetes resources by yq
         uses: mikefarah/yq@master
         with:
-          cmd: pwd && yq --inplace '.spec.template.spec.containers[image]="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' ./argocd-repository/webserver/webserver-deployment.yaml
+          cmd: pwd && yq --inplace '.spec.template.spec.containers[0].image="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' ./argocd-repository/webserver/webserver-deployment.yaml
           
       - name: change directory to argocd-repository/webserver
         run: |
