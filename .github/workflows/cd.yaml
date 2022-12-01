@@ -65,7 +65,7 @@ jobs:
           
       - name: change directory to argocd-repository/webserver
         run: |
-          cat webserver-deployment.yaml
+          cat argocd-repository/webserver/webserver-deployment.yaml
           
       - name: Commit files
         run: |
