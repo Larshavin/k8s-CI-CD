@@ -60,7 +60,7 @@ jobs:
           
       - name: change directory to argocd-repository/webserver
         run: |
-          cd argocd-repository/webserver
+          ls 
 
       - name: Update Kubernetes resources by yq
         uses: mikefarah/yq@master
