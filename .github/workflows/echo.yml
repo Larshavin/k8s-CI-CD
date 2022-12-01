@@ -1,8 +1,9 @@
-name: Release
+name: echo branch Name
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - develop
+      
 jobs:
   build:
     runs-on: [self-hosted, linux, x64]
