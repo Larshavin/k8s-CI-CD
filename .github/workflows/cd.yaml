@@ -56,11 +56,11 @@ jobs:
         with:
           repository: Larshavin/argocd-repository
           token: ${{ secrets.TOKEN_FORWIZ }} 
-          path: webserver
+          path: argocd-repository
           
       - name: change directory to argocd-repository/webserver
         run: |
-          cd ./webserver
+          cd ./argocd-repository
           ls -al
           cd ./webserver
           ls -al
@@ -68,7 +68,7 @@ jobs:
       - name: Update Kubernetes resources by yq
         uses: mikefarah/yq@master
         with:
-          cmd: yq --inplace '.spec.template.spec.containers[image]="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' webserver-deployment.yaml
+          cmd: pwd && yq --inplace '.spec.template.spec.containers[image]="${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}"' webserver-deployment.yaml
           
       - name: change directory to argocd-repository/webserver
         run: |
